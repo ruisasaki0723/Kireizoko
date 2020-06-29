@@ -3,19 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BE49D237463D477C10BD2EB /* Pods_Kireizoko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4AA7F4E4DA0E1208922BB9 /* Pods_Kireizoko.framework */; };
+		EA0736FD2499251E00787A49 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0736FC2499251E00787A49 /* TableViewCell.swift */; };
 		EADA6F4A247BFFD000416C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA6F49247BFFD000416C30 /* AppDelegate.swift */; };
 		EADA6F4C247BFFD000416C30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA6F4B247BFFD000416C30 /* SceneDelegate.swift */; };
 		EADA6F4E247BFFD000416C30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA6F4D247BFFD000416C30 /* ViewController.swift */; };
 		EADA6F51247BFFD000416C30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADA6F4F247BFFD000416C30 /* Main.storyboard */; };
 		EADA6F53247BFFD200416C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EADA6F52247BFFD200416C30 /* Assets.xcassets */; };
 		EADA6F56247BFFD200416C30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADA6F54247BFFD200416C30 /* LaunchScreen.storyboard */; };
+		EADA6F5E247C025B00416C30 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA6F5D247C025B00416C30 /* CameraViewController.swift */; };
+		EADA6F62247C14E900416C30 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA6F61247C14E900416C30 /* Task.swift */; };
+		EADA6F64247CEDDA00416C30 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA6F63247CEDDA00416C30 /* InputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00A1D2D48DAEB2721D4F6A42 /* Pods-Kireizoko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kireizoko.debug.xcconfig"; path = "Target Support Files/Pods-Kireizoko/Pods-Kireizoko.debug.xcconfig"; sourceTree = "<group>"; };
+		CC4AA7F4E4DA0E1208922BB9 /* Pods_Kireizoko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kireizoko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA0736FC2499251E00787A49 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EADA6F46247BFFD000416C30 /* Kireizoko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kireizoko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADA6F49247BFFD000416C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EADA6F4B247BFFD000416C30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +32,10 @@
 		EADA6F52247BFFD200416C30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EADA6F55247BFFD200416C30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EADA6F57247BFFD200416C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EADA6F5D247C025B00416C30 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		EADA6F61247C14E900416C30 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		EADA6F63247CEDDA00416C30 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		F80E80FEDEDBDED6B3000174 /* Pods-Kireizoko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kireizoko.release.xcconfig"; path = "Target Support Files/Pods-Kireizoko/Pods-Kireizoko.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BE49D237463D477C10BD2EB /* Pods_Kireizoko.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01DFEFBDB05FA1BC7899DC50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00A1D2D48DAEB2721D4F6A42 /* Pods-Kireizoko.debug.xcconfig */,
+				F80E80FEDEDBDED6B3000174 /* Pods-Kireizoko.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		834AC2A6A39A1A28B7E125A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC4AA7F4E4DA0E1208922BB9 /* Pods_Kireizoko.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EADA6F3D247BFFD000416C30 = {
 			isa = PBXGroup;
 			children = (
 				EADA6F48247BFFD000416C30 /* Kireizoko */,
 				EADA6F47247BFFD000416C30 /* Products */,
+				01DFEFBDB05FA1BC7899DC50 /* Pods */,
+				834AC2A6A39A1A28B7E125A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +88,16 @@
 		EADA6F48247BFFD000416C30 /* Kireizoko */ = {
 			isa = PBXGroup;
 			children = (
+				EADA6F61247C14E900416C30 /* Task.swift */,
 				EADA6F49247BFFD000416C30 /* AppDelegate.swift */,
 				EADA6F4B247BFFD000416C30 /* SceneDelegate.swift */,
 				EADA6F4D247BFFD000416C30 /* ViewController.swift */,
+				EA0736FC2499251E00787A49 /* TableViewCell.swift */,
+				EADA6F63247CEDDA00416C30 /* InputViewController.swift */,
+				EADA6F5D247C025B00416C30 /* CameraViewController.swift */,
 				EADA6F4F247BFFD000416C30 /* Main.storyboard */,
-				EADA6F52247BFFD200416C30 /* Assets.xcassets */,
 				EADA6F54247BFFD200416C30 /* LaunchScreen.storyboard */,
+				EADA6F52247BFFD200416C30 /* Assets.xcassets */,
 				EADA6F57247BFFD200416C30 /* Info.plist */,
 			);
 			path = Kireizoko;
@@ -74,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EADA6F5A247BFFD200416C30 /* Build configuration list for PBXNativeTarget "Kireizoko" */;
 			buildPhases = (
+				B9D9B0C00DD1DB33C2A09CD7 /* [CP] Check Pods Manifest.lock */,
 				EADA6F42247BFFD000416C30 /* Sources */,
 				EADA6F43247BFFD000416C30 /* Frameworks */,
 				EADA6F44247BFFD000416C30 /* Resources */,
+				65B9987F30CB1F24A10F23D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,13 +171,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		65B9987F30CB1F24A10F23D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kireizoko/Pods-Kireizoko-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kireizoko/Pods-Kireizoko-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kireizoko/Pods-Kireizoko-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9D9B0C00DD1DB33C2A09CD7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kireizoko-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EADA6F42247BFFD000416C30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EADA6F4E247BFFD000416C30 /* ViewController.swift in Sources */,
+				EADA6F5E247C025B00416C30 /* CameraViewController.swift in Sources */,
 				EADA6F4A247BFFD000416C30 /* AppDelegate.swift in Sources */,
+				EADA6F64247CEDDA00416C30 /* InputViewController.swift in Sources */,
+				EADA6F62247C14E900416C30 /* Task.swift in Sources */,
+				EA0736FD2499251E00787A49 /* TableViewCell.swift in Sources */,
 				EADA6F4C247BFFD000416C30 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,37 +366,41 @@
 		};
 		EADA6F5B247BFFD200416C30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00A1D2D48DAEB2721D4F6A42 /* Pods-Kireizoko.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JRVF4BAU4Z;
 				INFOPLIST_FILE = Kireizoko/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rui.sasaki.jp.Kireizoko;
+				PRODUCT_BUNDLE_IDENTIFIER = rui.sasaki2.jp.Kireizoko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		EADA6F5C247BFFD200416C30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F80E80FEDEDBDED6B3000174 /* Pods-Kireizoko.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JRVF4BAU4Z;
 				INFOPLIST_FILE = Kireizoko/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = rui.sasaki.jp.Kireizoko;
+				PRODUCT_BUNDLE_IDENTIFIER = rui.sasaki2.jp.Kireizoko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
