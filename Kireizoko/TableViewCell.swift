@@ -16,15 +16,40 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var zannissuLabel: UILabel!
     @IBOutlet weak var suryoSlider: UISlider!
     @IBOutlet weak var suryoLabel: UILabel!
-    
+    @IBOutlet weak var nokoriLabel: UILabel!
+   
     // スライダーを動かした際にその位置の値をラベルに設定
     @IBAction func suryoSliderAction(_ sender: Any) {
         let value = Int(suryoSlider.value)
         self.suryoLabel.text = String(value)
-        let actionValue = Int(suryoSlider.value)
         
         try! realm.write {
-            self.task.suryoValue = actionValue
+            self.task.suryoValue = value
+        }
+        // valueの値が0になった時に削除アラートを出す
+        if task.suryoValue == 0 {
+            //アラート生成
+            let alert: UIAlertController = UIAlertController(title: "商品の削除", message:  "商品を削除してもよろしいですか？", preferredStyle:  UIAlertController.Style.alert)
+            // 削除ボタンの処理
+            let confirmAction: UIAlertAction = UIAlertAction(title: "削除する", style: UIAlertAction.Style.default, handler:{
+                // 削除ボタンが押された時の処理をクロージャ実装する
+                (action: UIAlertAction!) -> Void in
+                //実際の処理
+                
+                print("削除")
+            })
+            // キャンセルボタンの処理
+            let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+                // キャンセルボタンが押された時の処理をクロージャ実装する
+                (action: UIAlertAction!) -> Void in
+                //実際の処理
+                print("キャンセル")
+            })
+            //UIAlertControllerにキャンセルボタンと確定ボタンをActionを追加
+            alert.addAction(cancelAction)
+            alert.addAction(confirmAction)
+            //実際にAlertを表示する
+            vc.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -42,9 +67,13 @@ class TableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+    var vc:UIViewController!
     
-    func setTaskData(_ taskData: Task) {
+    func setTaskData(_ taskData: Task, vc:UIViewController) {
         
+        self.vc = vc
+        
+        // 画像の設定
         self.cellimageView.image = UIImage(data: taskData.image)
         
         // 購入日ラベルに追加した日時を
@@ -60,13 +89,18 @@ class TableViewCell: UITableViewCell {
         let zannissuString: String = String(zannissu)
         self.zannissuLabel.text = zannissuString
         
+        // 残日数が0以下になったら賞味期限切れと表示する
+        if zannissu <= 0 {
+            zannissuLabel.text = ""
+            nokoriLabel.text = "賞味期限切れ"
+        }
+        
         // 数量スライダーの設定
         suryoSlider.minimumValue = 0;
         suryoSlider.maximumValue = Float(taskData.suryo);
         suryoSlider.value = Float(taskData.suryoValue);
         let value = Int(suryoSlider.value)
         self.suryoLabel.text = String(value)
-        self.suryoLabel.text = String(taskData.suryo)
         
         self.task = taskData
     }
