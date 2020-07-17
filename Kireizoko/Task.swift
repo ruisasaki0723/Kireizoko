@@ -28,7 +28,7 @@ class Task: Object {
     @objc dynamic var konyubi = Date()
     
     // カテゴリー
-    @objc dynamic var category = Int()
+    @objc dynamic var category = String()
     
     // id をプライマリーキーとして設定
     override static func primaryKey() -> String? {

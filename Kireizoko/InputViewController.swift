@@ -32,6 +32,7 @@ class InputViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         let total = sen * 1000 + hyaku * 100 + ju * 10 + ichi
         // カテゴリーPickerViewで選択した値
         let category = self.categoryPicker.selectedRow(inComponent: 0)
+        let categoryString = String(category)
         // 画像をData型に変換
         let data = image.jpegData(compressionQuality: 0.25)!
         
@@ -41,7 +42,7 @@ class InputViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             if isnew {
                 self.task.konyubi = Date()
             }
-            self.task.category = category
+            self.task.category = categoryString
             self.task.suryo = total
             self.task.suryoValue = total
             self.task.image = data
@@ -70,7 +71,7 @@ class InputViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     // 1の位
     let one:[String] = ["0","1","2","3","4","5","6","7","8","9"]
     
-    let category:[String] = ["野菜", "肉","魚", "乳製品", "飲料", "果物", "その他"]
+    let category:[String] = ["野菜","肉","魚","乳製品","飲料","果物","デザート","調味料","その他"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

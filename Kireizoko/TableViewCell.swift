@@ -17,7 +17,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var suryoSlider: UISlider!
     @IBOutlet weak var suryoLabel: UILabel!
     @IBOutlet weak var nokoriLabel: UILabel!
-   
+    
     // スライダーを動かした際にその位置の値をラベルに設定
     @IBAction func suryoSliderAction(_ sender: Any) {
         let value = Int(suryoSlider.value)
@@ -35,7 +35,24 @@ class TableViewCell: UITableViewCell {
                 // 削除ボタンが押された時の処理をクロージャ実装する
                 (action: UIAlertAction!) -> Void in
                 //実際の処理
-                
+                // ローカル通知をキャンセルする
+                let center = UNUserNotificationCenter.current()
+                center.removePendingNotificationRequests(withIdentifiers: [String(self.task.id)])
+                // データベースから削除する
+                try! self.realm.write {
+                    self.realm.delete(self.task)
+                    //self.vc.tableView.deleteRows(at: [indexPath], with: .fade)
+                    // 未通知のローカル通知一覧をログ出力
+                    center.getPendingNotificationRequests { (requests: [UNNotificationRequest]) in
+                        for request in requests {
+                            print("/---------------")
+                            print(request)
+                            print("---------------/")
+                        }
+                    }
+                }
+                // tableViewをリロードする
+                self.tableView.reloadData()
                 print("削除")
             })
             // キャンセルボタンの処理
@@ -57,22 +74,21 @@ class TableViewCell: UITableViewCell {
     let realm = try! Realm()
     var task: Task!
     
+    var vc:UIViewController!
+    var tableView:UITableView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
-    var vc:UIViewController!
     
-    func setTaskData(_ taskData: Task, vc:UIViewController) {
+    func setTaskData(_ taskData: Task, vc:UIViewController , tableView:UITableView) {
         
         self.vc = vc
-        
+        self.tableView = tableView
         // 画像の設定
         self.cellimageView.image = UIImage(data: taskData.image)
         
